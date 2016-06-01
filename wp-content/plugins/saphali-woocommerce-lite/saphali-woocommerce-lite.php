@@ -3,7 +3,7 @@
 Plugin Name: Saphali Woocommerce Russian
 Plugin URI: http://saphali.com/saphali-woocommerce-plugin-wordpress
 Description: Saphali Woocommerce Russian - это бесплатный вордпресс плагин, который добавляет набор дополнений к интернет-магазину на Woocommerce.
-Version: 1.6.3
+Version: 1.6.4
 Author: Saphali
 Author URI: http://saphali.com/
 Text Domain: saphali-woocommerce-lite
@@ -34,7 +34,7 @@ Domain Path: /languages
   
   // Подключение валюты и локализации
  define('SAPHALI_PLUGIN_DIR_URL',plugin_dir_url(__FILE__));
- define('SAPHALI_LITE_VERSION', '1.6.3' );
+ define('SAPHALI_LITE_VERSION', '1.6.4' );
  define('SAPHALI_PLUGIN_DIR_PATH',plugin_dir_path(__FILE__));
  class saphali_lite {
  var $email_order_id;
@@ -1209,7 +1209,13 @@ Domain Path: /languages
 			$fields["shipping"] = $fieldss["shipping"];
 			$fields["order"] = $fieldss["order"];
 		}
-
+		foreach(array("billing", "shipping", "order") as $v)
+		foreach($fields[$v] as $key => $value) {
+			if(isset($fields[$v][$key]["label"]))
+			$fields[$v][$key]["label"] = __($value["label"], 'woocommerce');
+			if(isset($fields[$v][$key]["placeholder"]))
+			$fields[$v][$key]["placeholder"] = __($value["placeholder"], 'saphali-woocommerce-lite');
+		}
 		 return $fields;
 	}
 	function saphali_custom_edit_address_fields( $fields ) {
@@ -1224,7 +1230,12 @@ Domain Path: /languages
 			$_a_ = array_diff_assoc ($__fields, $fields);
 			if(is_array($_a_) && is_array($fields) ) $fields = (array)$fields + (array)$_a_;
 		}
-	
+		foreach($fields as $key => $value) {
+			if(isset($fields[$key]["label"]))
+			$fields[$key]["label"] = __($value["label"], 'woocommerce');
+			if(isset($fields[$key]["placeholder"]))
+			$fields[$key]["placeholder"] = __($value["placeholder"], 'woocommerce');
+		}
 		return $fields;
 	}
 	function saphali_custom_billing_fields( $fields ) {
@@ -1232,14 +1243,26 @@ Domain Path: /languages
 		$fieldss = get_option('woocommerce_saphali_filds_filters');
 		if(is_array($fieldss))
  		$fields = $fieldss["billing"];
-
-		 return $fields;
+		foreach($fields as $key => $value) {
+			if(isset($fields[$key]["label"]))
+			$fields[$key]["label"] = __($value["label"], 'woocommerce');
+			if(isset($fields[$key]["placeholder"]))
+			$fields[$key]["placeholder"] = __($value["placeholder"], 'woocommerce');
+			
+		}
+		return $fields;
 	}
 	function saphali_custom_shipping_fields( $fields ) {
 		$fieldss = get_option('woocommerce_saphali_filds_filters');
 		if(is_array($fieldss))
 		$fields = $fieldss["shipping"];
-		 return $fields;
+		foreach($fields as $key => $value) {
+			if(isset($fields[$key]["label"]))
+			$fields[$key]["label"] = __($value["label"], 'woocommerce');
+			if(isset($fields[$key]["placeholder"]))
+			$fields[$key]["placeholder"] = __($value["placeholder"], 'woocommerce');
+		}
+		return $fields;
 	}
 	public function store_order_id( $arg ) {
 		if ( is_int( $arg ) ) $this->email_order_id = $arg;

@@ -5,8 +5,8 @@ Plugin URI: http://saphali.com/saphali-woocommerce-plugin-wordpress
 Donate link: https://www.liqpay.com/en/checkout/step1/i8373911028
 Tags: woocommerce, woo commerce russian, russian ruble, ukrainian hryvnia, mod, manadger filds checkout
 Requires at least: WP 3.3 or higher & WooCommerce 1.6.6 or higher
-Tested up to: 4.5.1
-Stable tag: 1.6.3
+Tested up to: 4.5.2
+Stable tag: 1.6.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,9 @@ define('SAPHALI_LITE_SYMBOL', 0 );
 5. Управление количеством колонок в каталоге товаров и рубриках.
 
 == Changelog ==
+
+= 1.6.4 =
+* Совместимость с WPML и др. плагинами мультиязычности. [Для справки. Перевод полей в файлах локализации должен быть обеспечен Вами (Text Domain: woocommerce). В данном плагине не располагается перевод полей, т.к. предугадать их невозможно (их название Вы сами задаете в настройках, потому и перевод делать также необходимо Вам). Если Вы название полей не изменяете, то названия должны быть на английском, чтобы не готовить новый перевод на другие языки].
 
 = 1.6.3 =
 * Реализована возможность править администратором введенные данные дополнительных полей в заказе.

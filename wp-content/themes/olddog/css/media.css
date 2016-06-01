@@ -1,0 +1,119 @@
+@media (max-width: 992px) { 
+
+    .lg, .promotion .right {display: none;} 
+    .info li {font-size: 13px;}
+    .copyr {float: none; padding: 0; display: block; width: 100%; text-align: center;}
+    .phone span {font-size: 22px; line-height: 32px;}
+    .info_head {margin: 0 170px 0 120px;}
+    .info li {width: 50%;}
+    .categories li {width: 25%;}
+    .art_large, .art_small {width: 100%;}
+    .art_small {padding: 20px 0 0 0;}
+    .promotion .left {float: none;}
+    
+    .product_detailed .image img {max-width: 100%; min-width: 100%;}
+    .product_detailed .image, .product_detailed .feature {float: left; width: 50%;}
+    .product_detailed .info_prod {float: left; margin-top: 20px;}
+    .products_related li {width: 100%;}
+    .product_detailed .image {padding-right: 20px;}
+
+    
+}
+
+@media (max-width: 768px) {
+
+     .art_small, .subscription, .widget, .news, .block_text, #menu > li > a.active:after {display: none;}
+    .footer {text-align: center;}
+    .left_column + .content_frame {margin: 0;}
+    .menu_bot {width: 100%; display: block; float: none; text-align: center;}
+    .menu_bot ul {width: auto; float: none; display: inline-block; vertical-align: top; margin: 0 25px;}
+    .menu_bot ul li {text-align: left;}
+    .contacts {float: none; display: block; text-align: center; width: 100%;}
+    .footer .contacts {margin-top: 20px;}
+    .phone {text-align: center;}
+    .work {display: inline-block; vertical-align: top;}
+    .info_head .work {margin-top: 10px;}
+    .info_head {margin: 0;}
+    .logo {float: none; display: block;  text-align: center; margin-left: 0;}
+    .logo a {display: inline-block; vertical-align: top;}
+    .info_head .phone {padding-top: 0;}
+    .cart {position: relative; display: inline-block; text-align: left;}
+    .header > .cent {text-align: center;}
+    .header {padding-bottom: 20px;}
+    .menu_top {display: none;}
+    .btn_menu_mobile {display: block;}
+    
+    .left_column {position: absolute; left: 0; top: 42px; height: 100%; background: #fff; z-index: 150; overflow-y: auto;
+    -moz-transform: translate(-250px, 0);
+    -ms-transform: translate(-250px, 0);
+    -webkit-transform: translate(-250px, 0);
+    -o-transform: translate(-250px, 0);
+    transform: translate(-250px, 0);
+    }
+    .head_top {z-index: 150; position: relative;}
+    .open_catal {overflow: hidden;}
+    .open_catal .left_column {
+        
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+    }
+    .open_catal .sh {display: block;}
+    .cart_table .price {padding-right: 20px;}
+    
+    .catalog.box-shadow {border: 0px solid #e5e5e5;
+-moz-border-radius:0px;
+-webkit-border-radius:0px; 
+border-radius:0px;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+    .products_list .image_prod img {width: 80px;}
+    .products_list .desc_prod {margin-left: 100px;}
+    
+}
+
+@media (max-width: 600px) {
+
+.categories li {width: 33.3%;}
+    .cart_table tr td:first-child {display: none;}
+    .cart_table tr.itog td:first-child {display: block;}
+    .sort .view {margin-right: 0; margin-top: 5px; display: block; float: none;}
+    
+}
+
+@media (max-width: 450px) {
+    
+    .video_reviews li {width: 100%; margin-top: 20px;}
+    .video_reviews li:first-child {margin-top: 0;}
+    .categories li {width: 50%;}
+    .menu_bot ul {display: block; width: 100%; padding: 0; margin: 0;}
+    .menu_bot ul li {text-align: center;}
+    h3 {font-size: 22px;}
+    .manufacturers h3 {display: block;}
+    .manufacturers .btn {margin-left: 0;}
+    #popup h3 {font-size: 20px;}
+    .block_info .item_rad {display: block;}
+    
+
+    .products_list .image_prod a {display: inline-block; vertical-align: top;}
+    .products_list .image_prod img {width: auto; min-width: 100%; max-width: 100%;}
+    .products_list .desc_prod {margin: 0; margin-top: 20px; float: left; width: 100%;}
+    
+    .products_list .info_prod, .products_list .image_prod {float: left; width: 50%; padding-left: 5px; padding-right: 5px; }
+    .product_detailed .image {padding-right: 0; width: 100%;}
+    .product_detailed .feature {width: 100%;}
+
+    
+}
+
+@media (max-width: 400px) {
+    
+    .info li {width: 100%;}
+    .inp {width: 100%;}
+
+    
+}

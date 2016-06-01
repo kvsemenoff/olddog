@@ -123,6 +123,22 @@
                     <div class="news">
                         <h3><a href="#">новости</a></h3>
                         <ul>
+                            <?php
+                            wp_reset_query(); 
+                                
+                            $wp_query = new WP_Query(array(
+                               'cat' => '7'
+                                ));
+                             
+                                while ($wp_query->have_posts()) : $wp_query->the_post();
+                            ?>
+                            <li>
+                                <span><?php the_time('d.m.Y'); ?></span>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </li>
+                            
+                         <?php endwhile;?>
+
                             <li><span>19.06.2014</span> <a href="#">20% скидка на синнинги "Норстрим"</a></li>
                             <li><span>12.04.2014</span> <a href="#">Расширен ассортимент Воблеры Major Craft и Kosadaka</a></li>
                             <li><span>21.02.2014</span> <a href="#">На склад поступила продукция торговой марки Сабанеев + полный ассортимент кормушек FeederSport</a></li>
@@ -217,12 +233,39 @@
                         
                         <div class="articles">
                             <h3><a href="#">Статьи и информация</a></h3>
+                                <?php 
+                                wp_reset_query(); 
+                                $wp_query = new WP_Query(array(
+                                   'cat' => '8'
+                                    ));
+                                 
+                                    while ($wp_query->have_posts()) : $wp_query->the_post();
+                                    if (get_field('на_главную')=='да'){
+                                ?>
                             <div class="art_large">
                                 <img src="<?php echo get_template_directory_uri(); ?>/images/article1.jpg" alt="">
-                                <h4><a href="#">Маскировка для рыбалки</a></h4>
-                                <p>Снасти, приманки, лодка, сапоги – все это неотъемлемые атрибуты любого рыболова, которым уделяется очень большое внимание. Однако, стоит также отметить, что немаловажным является и одежда рыбака, которая должна быть одновременно и удобной, и практичной. Снасти, приманки, лодка, сапоги – все это неотъемлемые атрибуты любого рыболова.</p>
+                                <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                <?php the_content(); ?>
+                                <?php } ?>
                             </div>
+                            <?php endwhile;?>
                             <div class="art_small">
+
+                                <?php 
+                                wp_reset_query(); 
+                                $wp_query = new WP_Query(array(
+                                   'cat' => '8'
+                                    ));
+                                 
+                                    while ($wp_query->have_posts()) : $wp_query->the_post();
+                                ?>
+                                
+                                <div class="item">
+                                    <?php the_post_thumbnail(); ?>
+                                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                                    <p><?php the_content(); ?> </p>
+                                </div>
+                                <?php endwhile;?>
                                 <div class="item">
                                     <img src="<?php echo get_template_directory_uri(); ?>/images/article2.jpg" alt="">
                                     <h4><a href="#">Искусственная приманка для сома</a></h4>
@@ -251,5 +294,5 @@
                 </div>
             </div>
         </section><!-- content -->
-        
+
  <?php get_footer(); ?>

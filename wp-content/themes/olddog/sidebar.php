@@ -119,7 +119,10 @@
                     <div class="news">
                         <h3><a href="#">новости</a></h3>
                         <ul>
-                            <?php $wp_query = new WP_Query(array(
+                        <?php wp_reset_query(); ?>
+                            <?php 
+                                
+                                $wp_query = new WP_Query(array(
                                'cat' => '7'
                                 ));
                              
@@ -142,3 +145,4 @@
                     </div>
                     
                 </div><!-- left_column -->
+                <?php wp_reset_query(); ?>

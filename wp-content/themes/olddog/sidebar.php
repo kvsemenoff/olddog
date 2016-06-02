@@ -119,8 +119,15 @@
                     <div class="news">
                         <h3><a href="#">новости</a></h3>
                         <ul>
+<<<<<<< HEAD
                             <?php wp_reset_query(); ?>
                             <?php $wp_query = new WP_Query(array(
+=======
+                        <?php wp_reset_query(); ?>
+                            <?php 
+                                
+                                $wp_query = new WP_Query(array(
+>>>>>>> b1869a13b5c5a52d66cf2920b82814ced16071db
                                'cat' => '7'
                                 ));
                              

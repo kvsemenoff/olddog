@@ -4,6 +4,7 @@
                 
                 <div class="left_column">
                     <div class="catalog box-shadow">
+                        
                         <h3>Каталог товаров</h3>
                         <ul id="menu"> 
                             <li><a href="#"><span>Удилища</span></a>

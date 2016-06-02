@@ -74,7 +74,7 @@
             </div><!-- head_top -->
             
             <div class="cent clearfix">
-                <div class="logo"><a href="#"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt=""></a></div>
+                <div class="logo"><a href="/"><img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" alt=""></a></div>
                 
                 
                 

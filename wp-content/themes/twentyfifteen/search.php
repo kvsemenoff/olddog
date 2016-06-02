@@ -28,7 +28,9 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'content', 'search' );
+				?>
+				<a href="<?php the_permalik(); ?>"><?php the_title(); ?></a>
+				<?
 
 			// End the loop.
 			endwhile;
@@ -42,7 +44,7 @@ get_header(); ?>
 
 		// If no content, include the "No posts found" template.
 		else :
-			get_template_part( 'content', 'none' );
+			echo "По Вашему запросу ничего не нвайдено. ";
 
 		endif;
 		?>

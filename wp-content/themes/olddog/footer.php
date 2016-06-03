@@ -6,21 +6,47 @@
                 </div>
 
                 <div class="menu_bot">
-                    <ul>
-                        <li><a href="#">Как заказать?</a></li>
-                        <li><a href="#">Оплата</a></li>
-                        <li><a href="#">Доставка</a></li>
-                        <li><a href="#">Самовывоз</a></li>
-                        <li><a href="#">Контакты</a></li>
-                        <li><a href="#">О магазине</a></li>
-                    </ul>
-                    <ul>
-                        <li><a href="#">Условия пользования</a></li>
-                        <li><a href="#">Написать нам</a></li>
-                        <li><a href="#">Скидки</a></li>
-                        <li><a href="#">Личный кабинет</a></li>
-                        <li><a href="#">Карта сайта</a></li>
-                    </ul>
+                    <?php
+                        $args = array(
+                        'theme_location'  => '',
+                        'menu'            => 'footer1', 
+                        'container'       => flase, 
+                        'container_class' => '', 
+                        'container_id'    => '',
+                        'menu_class'      => 'menu', 
+                        'menu_id'         => '',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'before'          => '',
+                        'after'           => '',
+                        'link_before'     => '',
+                        'link_after'      => '',
+                        'items_wrap'      => '<ul>%3$s</ul>',
+                        'depth'           => 0
+                    );
+                    wp_nav_menu($args ); 
+                    ?>
+
+                    <?php
+                        $args = array(
+                        'theme_location'  => '',
+                        'menu'            => 'footer2', 
+                        'container'       => flase, 
+                        'container_class' => '', 
+                        'container_id'    => '',
+                        'menu_class'      => 'menu', 
+                        'menu_id'         => '',
+                        'echo'            => true,
+                        'fallback_cb'     => 'wp_page_menu',
+                        'before'          => '',
+                        'after'           => '',
+                        'link_before'     => '',
+                        'link_after'      => '',
+                        'items_wrap'      => '<ul>%3$s</ul>',
+                        'depth'           => 0
+                    );
+                    wp_nav_menu($args ); 
+                    ?>
                 </div>
 
                 <div class="contacts">
@@ -29,10 +55,7 @@
                 </div>
             </div>
         </footer>
-        
-    </div>
-    
-            
+
     <div id="popup" class="mfp-hide">
         <h3>Заказать обратный звонок</h3>
         <form action="#">

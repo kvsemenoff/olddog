@@ -119,17 +119,12 @@
                     <div class="news">
                         <h3><a href="#">новости</a></h3>
                         <ul>
-<<<<<<< HEAD
+
                             <?php wp_reset_query(); ?>
-                            <?php $wp_query = new WP_Query(array(
-=======
-                        <?php wp_reset_query(); ?>
+                                                    
                             <?php 
                                 
-                                $wp_query = new WP_Query(array(
->>>>>>> b1869a13b5c5a52d66cf2920b82814ced16071db
-                               'cat' => '7'
-                                ));
+                                $wp_query = new WP_Query(array('cat' => '7'));
                              
                                 while ($wp_query->have_posts()) : $wp_query->the_post();
                             ?>
@@ -138,7 +133,7 @@
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </li>
                             
-                        <?php endwhile;?>
+                        <?php endwhile; ?>
 
                         </ul>
                     </div>

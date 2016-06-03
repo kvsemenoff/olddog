@@ -2,6 +2,10 @@
 <section class="content">
             <div class="cent">
                 
+<<<<<<< HEAD
+                <?php require_once('sidebar.php'); ?>
+      
+=======
                 <div class="left_column">
                     <div class="catalog box-shadow">
                         <h3>Каталог товаров</h3>
@@ -96,7 +100,7 @@
                                     <li><a href="#">наживки</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#"><span>Лодки, моторы</span></a>
+                            <li><a href="#"><span>123412342134</span></a>
                                 <ul>
                                     <li><a href="#">воблеры</a></li>
                                     <li><a href="#">вращающиеся блесна</a></li>
@@ -136,15 +140,18 @@
                     
                 </div><!-- left_column -->
                 
+>>>>>>> b1869a13b5c5a52d66cf2920b82814ced16071db
                 <div class="content_frame clearfix">
                     <div class="w100">
-                        
-                        <div class="search">
+
+                    
+                        <?php require_once('search_form.php'); ?>
+                       <!--  <div class="search">
                             <form action="#">
                                 <input type="text" class="inp_s" value="" placeholder="Поиск по сайту">
                                 <button class="btn green">Найти</button>
                             </form>
-                        </div>
+                        </div> -->
                         
 
 
@@ -156,6 +163,7 @@
                             
                             <div class="description">
                                <h3><?php the_title(); ?></h3>
+                               
                                <?php while ( have_posts() ) : the_post(); ?>
 							   <?php the_content(); ?>
 							   <?php endwhile; // end of the loop. ?>

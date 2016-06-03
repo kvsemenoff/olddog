@@ -20,11 +20,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header( 'shop' ); ?>
-<div class="main">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
-				<div class="wp_cart">
+<section class="content">
+    <div class="cent">
+
+     				<?php get_sidebar(); ?>
+     				<div class="content_frame clearfix">
+                    <div class="w100">
+                    <?php get_template_part('search_form'); ?>
+					<?php get_template_part('promo'); ?>
+					<?php add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
+					function jk_woocommerce_breadcrumbs() {
+					    return array(
+					            'delimiter'   => '',
+					            'wrap_before' => '<div class="breadcrumbs"><ul>',
+					            'wrap_after'  => '</ul></div>',
+					            'before'      => '<li><a href="#">',
+					            'after'       => '</a></li>',
+					            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
+					        );
+					} ?>
 					<?php
 						/**
 						 * woocommerce_before_main_content hook.
@@ -35,6 +49,7 @@ get_header( 'shop' ); ?>
 						do_action( 'woocommerce_before_main_content' );
 					?>
 
+					
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<?php wc_get_template_part( 'content', 'single-product' ); ?>
@@ -49,18 +64,10 @@ get_header( 'shop' ); ?>
 						 */
 						do_action( 'woocommerce_after_main_content' );
 					?>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
-				<div class="right-nav">
-					<div class="heading"> 
-					  <h4>Навигация</h4>
-					</div>
-					
-					<?php echo do_shortcode('[product_categories_list]'); ?>				</div>
-			</div>
-		</div>
+
+					<?php echo do_shortcode('[product_categories_list]'); ?>
+					</div></div>
 	</div>
-</div>
+</section>				
 <?php get_footer( 'shop' ); ?>
 

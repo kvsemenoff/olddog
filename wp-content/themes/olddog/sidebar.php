@@ -1,10 +1,6 @@
-<?php get_header(); ?>
-<section class="content">
-            <div class="cent">
-                
+    
                 <div class="left_column">
                     <div class="catalog box-shadow">
-                        
                         <h3>Каталог товаров</h3>
                         <ul id="menu"> 
                             <li><a href="#"><span>Удилища</span></a>
@@ -123,9 +119,22 @@
                     <div class="news">
                         <h3><a href="#">новости</a></h3>
                         <ul>
-                            <li><span>19.06.2014</span> <a href="#">20% скидка на синнинги "Норстрим"</a></li>
-                            <li><span>12.04.2014</span> <a href="#">Расширен ассортимент Воблеры Major Craft и Kosadaka</a></li>
-                            <li><span>21.02.2014</span> <a href="#">На склад поступила продукция торговой марки Сабанеев + полный ассортимент кормушек FeederSport</a></li>
+
+                            <?php wp_reset_query(); ?>
+                                                    
+                            <?php 
+                                
+                                $wp_query = new WP_Query(array('cat' => '7'));
+                             
+                                while ($wp_query->have_posts()) : $wp_query->the_post();
+                            ?>
+                            <li>
+                                <span><?php the_time('d.m.Y'); ?></span>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </li>
+                            
+                        <?php endwhile; ?>
+
                         </ul>
                     </div>
                     
@@ -136,44 +145,4 @@
                     </div>
                     
                 </div><!-- left_column -->
-                
-                <div class="content_frame clearfix">
-                    <div class="w100">
-                        
-                        <div class="search">
-                            <form action="#">
-                                <input type="text" class="inp_s" value="" placeholder="Поиск по сайту">
-                                <button class="btn green">Найти</button>
-                            </form>
-                        </div>
-                        
-
-
-                        
-
-                        
-                        <div class="product_detailed clearfix">
-                      
-                            
-                            <div class="description">
-                               <h3><?php the_title(); ?></h3>
-                               <?php while ( have_posts() ) : the_post(); ?>
-							   <?php the_content(); ?>
-							   <?php endwhile; // end of the loop. ?>
-                            </div>
-                            
-                        </div>
-                        
-                        
-                        
-                        
-                        
-                        
-                    </div>
-                </div><!-- content_frame -->
-                
-            </div>
-        </section><!-- content -->
-
-   
-<?php get_footer(); ?>
+                <?php wp_reset_query(); ?>

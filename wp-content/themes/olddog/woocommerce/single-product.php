@@ -26,46 +26,155 @@ get_header( 'shop' ); ?>
      				<?php get_sidebar(); ?>
      				<div class="content_frame clearfix">
                     <div class="w100">
-                    <?php get_template_part('search_form'); ?>
-					<?php get_template_part('promo'); ?>
-					<?php add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
-					function jk_woocommerce_breadcrumbs() {
-					    return array(
-					            'delimiter'   => '',
-					            'wrap_before' => '<div class="breadcrumbs"><ul>',
-					            'wrap_after'  => '</ul></div>',
-					            'before'      => '<li><a href="#">',
-					            'after'       => '</a></li>',
-					            'home'        => _x( 'Home', 'breadcrumb', 'woocommerce' ),
-					        );
-					} ?>
-					<?php
-						/**
-						 * woocommerce_before_main_content hook.
-						 *
-						 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-						 * @hooked woocommerce_breadcrumb - 20
-						 */
-						do_action( 'woocommerce_before_main_content' );
-					?>
+                    <div class="search">
+                            <form action="#">
+                                <input type="text" class="inp_s" value="" placeholder="Поиск по сайту">
+                                <button class="btn green">Найти</button>
+                            </form>
+                        </div>
+                        
+                        <div class="promotion">
+                            <div><a href="#"><img src="html/images/slider3.jpg" alt=""></a></div> 
+                        </div>
+                        
+                        <div class="info clearfix">
+                            <ul>
+                                <li><span><i class="icon ic1"></i>Бесплатная доставка</span></li>
+                                <li><span><i class="icon ic2"></i>Официальные поставки</span></li>
+                                <li><span><i class="icon ic3"></i>Как купить в магазине</span></li>
+                                <li><span><i class="icon ic4"></i>Скидки всем покупателям</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="breadcrumbs">
+                            <ul>
+                                <li><a href="#">Каталог</a></li>
+                                <li><a href="#">Катушки с передним фрикционом</a></li>
+                            </ul>
+                        </div>
+                        
+                        <h1>SHIMANO CATANA 1000FC</h1>
+                        
+                        <div class="product_detailed clearfix">
+                            <div class="image"><img src="html/images/pic1.jpg" alt=""></div>
+                            <div class="feature">
+                                <p>Код товара: 36016</p>
+                                <p>Max Drag: 2 кг.</p>
+                                <p>Артикул: CAT1000FC</p>
+                                <p>Вес: 215 гр.</p>
+                                <p>Доп. шпуля: графитовая</p>
+                                <p>Кол-во подшипников: 2+1 шт.</p>
+                                <p>Корпус: XT-7</p>
+                                <p>Лесоёмкость: 0,20-140</p>
+                                <p>Оборот ручки: 64 см.</p>
+                                <p>Передаточное число: 5,2:1</p>
+                                <p>Размер: 1000</p>
+                                <p>Тип механизма: планетарный</p>
+                            </div>
+                            <div class="info_prod">
+                            	<form class="cart" method="post" enctype='multipart/form-data'>
+   <?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+ 
+   <?php if ( ! $product->is_sold_individually() )
+     woocommerce_quantity_input( array(
+      'min_value' => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
+      'max_value' => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product )
+     ) );
+   ?>
+ 
+   <input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
+ 
+   <button type="submit" class="single_add_to_cart_button button alt"><?php echo $product->single_add_to_cart_text(); ?></button>
+ 
+  <?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
+ </form>
+ 
+ 
+ 
+ 
+ 
+ <?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
+
+                                    <div class="price">2.670 <span class="rub">b</span></div>
+                                    <div class="quantity">
+                                            <i class="titl">Количество</i>
+                                            <span class="minus"></span>
+                                            <input type="text" class="inp_q" value="3">
+                                            <span class="plus"></span>                                         
+                                    </div>
+                                    <div class="buy">
+                                        <button class="btn add_cart"><span>В корзину</span></button>
+                                        <p><a href="#">Купить в 1 клик</a></p>
+                                    </div>
+                            </div>
+                            
+                            <div class="clear"></div>
+                            
+                            <div class="description">
+                                <h3>Описание:</h3>
+                                <p>Поражающий красный цвет катушки Catana FC делает агрессивное предложение рыболовам, желающим выделится из толпы. Будучи частью серии Р4, Catana демонстрирует гладкое действие и предлагает исключительное соответствие качества цене. Оснащенная 2-мя защищенными шарикоподшипниками из нержавеющей стали и роликовым подшипником, системой намотки лески Varispeed и алюминевой шпулей AR-C, Catana является отличной всезонной катушкой для большинства рыболовных ситуаций.</p>
+                                
+                                <p>Серия Shimano NAVI XTB – эволюция хорошо зарекомендовавшей себя Shimano Navi XSA. Разработчики постарались максимально усовершенствовать все элементы, сохранив при этом «атмосферу» Navi XSA. Первое изменение, которое бросается в глаза – дизайн. Разработчики решили окрасить корпус в серебристый цвет, а в качестве материала для его изготовления был выбран материал ХТ7, который отличается легкостью и прочностью. Ротор имеет прекрасную балансировку, все детали имеют минимально возможные допуски, поэтому возникновение люфтов сводится «на нет». Подшипники (роликовый и шариковый) изготовлены из стали и покрыты специальным покрытием, которое позволяет полностью избавится от такой проблемы, как ржавление. Позаботились разработчики и о том, чтобы добиться большой дальности заброса. Увеличению этой характеристики способствует шпуля AR-C большой емкости, а также система лесоукладки Aerowrap II. Кстати, катушка снабжена специальной системой, которая автоматически защелкивает дужку лесеукладывателя. Мелочь, а все-таки очень удобно, особенно в карповой ловле. Фрикционный тормоз имеет очень точную настройку, обладает мягким действием, поэтому рыболов может чувствовать себя абсолютно уверенно в борьбе с крупной, бойкой рыбой. Серия Shimano NAVI XTB – эволюция хорошо зарекомендовавшей себя Shimano Navi XSA. Разработчики постарались максимально усовершенствовать все элементы, сохранив при этом «атмосферу» Navi XSA. Первое изменение, которое бросается в глаза – дизайн. Разработчики решили окрасить корпус в серебристый цвет, а в качестве материала для его изготовления был выбран материал ХТ7, который отличается легкостью и прочностью. Ротор имеет прекрасную балансировку, все детали имеют минимально возможные допуски, поэтому возникновение люфтов сводится «на нет».</p>
+                            </div>
+                            
+                        </div>
+                        
+                        
+                        <div class="products_related">
+                            <h3>Похожие товары</h3>
+                            <ul>
+                                <li>
+                                    <div class="image"><a href="#"><img src="html/images/cat11.jpg" alt=""></a></div>
+                                    <div class="desc">
+                                        <h4><a href="#">BLACK HOLE BX 1000</a></h4>
+                                        <div class="code">Код товара: 4232</div>
+                                        <div class="price">1.220 <span class="rub">b</span></div>
+                                        <div class="buy">
+                                            <button class="btn add_cart"><span>В корзину</span></button>
+                                            <p><a href="#">Купить в 1 клик</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="image"><a href="#"><img src="html/images/cat11.jpg" alt=""></a></div>
+                                    <div class="desc">
+                                        <h4><a href="#">BLACK HOLE BX 1000</a></h4>
+                                        <div class="code">Код товара: 4232</div>
+                                        <div class="price">1.220 <span class="rub">b</span></div>
+                                        <div class="buy">
+                                            <button class="btn add_cart"><span>В корзину</span></button>
+                                            <p><a href="#">Купить в 1 клик</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="image"><a href="#"><img src="html/images/cat11.jpg" alt=""></a></div>
+                                    <div class="desc">
+                                        <h4><a href="#">BLACK HOLE BX 1000</a></h4>
+                                        <div class="code">Код товара: 4232</div>
+                                        <div class="price">1.220 <span class="rub">b</span></div>
+                                        <div class="buy">
+                                            <button class="btn add_cart"><span>В корзину</span></button>
+                                            <p><a href="#">Купить в 1 клик</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="image"><a href="#"><img src="html/images/cat11.jpg" alt=""></a></div>
+                                    <div class="desc">
+                                        <h4><a href="#">BLACK HOLE BX 1000</a></h4>
+                                        <div class="code">Код товара: 4232</div>
+                                        <div class="price">1.220 <span class="rub">b</span></div>
+                                        <div class="buy">
+                                            <button class="btn add_cart"><span>В корзину</span></button>
+                                            <p><a href="#">Купить в 1 клик</a></p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
 
 					
-						<?php while ( have_posts() ) : the_post(); ?>
-
-							<?php wc_get_template_part( 'content', 'single-product' ); ?>
-
-						<?php endwhile; // end of the loop. ?>
-
-					<?php
-						/**
-						 * woocommerce_after_main_content hook.
-						 *
-						 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-						 */
-						//do_action( 'woocommerce_after_main_content' );
-					?>
-
-					<?php echo do_shortcode('[product_categories_list]'); ?>
 					</div></div>
 	</div>
 </section>				

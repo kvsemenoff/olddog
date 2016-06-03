@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $post, $woocommerce, $product;
 
 ?>
-<div class="images">
+<div class="image">
 	<?php
 		if ( has_post_thumbnail() ) {
 			$image_caption = get_post( get_post_thumbnail_id() )->post_excerpt;
@@ -48,5 +48,5 @@ global $post, $woocommerce, $product;
 		}
 	?>
 
-	<?php do_action( 'woocommerce_product_thumbnails' ); ?>
+	<?php //do_action( 'woocommerce_product_thumbnails' ); ?>
 </div>

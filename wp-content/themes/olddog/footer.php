@@ -65,5 +65,6 @@
         </form>
     </div>
     <div class="sh"></div>        
+    <?php wp_footer(); ?>
 </body>
 </html>

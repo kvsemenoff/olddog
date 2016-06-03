@@ -21,21 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<?php
-	/**
-	 * woocommerce_before_single_product hook.
-	 *
-	 * @hooked wc_print_notices - 10
-	 */
-	 do_action( 'woocommerce_before_single_product' );
 
-	 if ( post_password_required() ) {
-	 	echo get_the_password_form();
-	 	return;
-	 }
-?>
 
-<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php
 		/**
@@ -46,9 +33,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		 */
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
-
-	<div class="summary entry-summary">
-
+	
+	<div class="product_detailed clearfix">
+		
 		<?php
 			/**
 			 * woocommerce_single_product_summary hook.
@@ -79,8 +66,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		//do_action( 'woocommerce_after_single_product_summary' );
 	?>
 
-	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
-</div><!-- #product-<?php the_ID(); ?> -->
 
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+
+
+<?php// do_action( 'woocommerce_after_single_product' ); ?>
